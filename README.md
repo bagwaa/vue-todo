@@ -1,5 +1,7 @@
 # Vue Todo
 
+![The Best Todo List in the World (maybe)](https://github.com/bagwaa/vue-todo/blob/master/screenshot.png)
+
 ## Install
 
 ```
