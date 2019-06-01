@@ -24,17 +24,18 @@ export default {
   },
   methods: {
     submitForm() {
-      if (this.newTodo.length === 0) {
-        alert("You need to enter some text for a todo");
-        return;
-      }
-      this.$emit("add-todo", {
-        id: uuid.v4(),
-        description: this.newTodo,
-        complete: false
-      });
+        if (this.newTodo.length === 0) {
+            alert("You need to enter some text for a todo");
+            return;
+        }
 
-      this.newTodo = "";
+        this.$store.dispatch('add', {  
+            id: uuid.v4(),
+            description: this.newTodo,
+            complete: false
+        })
+
+        this.newTodo = "";
     }
   }
 };

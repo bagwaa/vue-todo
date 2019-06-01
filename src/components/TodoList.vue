@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <TodoListItem @delete-todo="deleteTodo" v-for="todo in todos" :key="todo.id" :todo="todo"/>
+      <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo"/>
     </ul>
-    <TodoAdder @add-todo="addTodo"/>
+    <TodoAdder />
   </div>
 </template>
 
@@ -16,15 +16,11 @@ export default {
     TodoListItem,
     TodoAdder
   },
-  methods: {
-    deleteTodo(id) {
-      this.$emit("delete-todo", id);
-    },
-    addTodo(newTodo) {
-      this.$emit("add-todo", newTodo);
+  computed: {
+    todos() {
+        return this.$store.getters.todos;
     }
   },
-  props: ["todos"]
 };
 </script>
 
