@@ -1,7 +1,7 @@
 <template>
   <li
     :class="{ 'bg-green-700': todo.complete, 'text-white': todo.complete }"
-    class="cursor-pointer bg-yellow-200 text-black block py-6 px-2 border text-center"
+    class="bg-yellow-200 text-black block py-6 px-2 border text-center"
   >
     <span :class="{ completed: todo.complete }">{{ todo.description }}</span>
     
