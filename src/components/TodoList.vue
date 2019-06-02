@@ -1,15 +1,19 @@
 <template>
   <div>
     <ul>
-      <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo"/>
+      <TodoListItem
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+      />
     </ul>
     <TodoAdder />
   </div>
 </template>
 
 <script>
-import TodoListItem from "@/components/TodoListItem";
-import TodoAdder from "@/components/TodoAdder";
+import TodoListItem from '@/components/TodoListItem'
+import TodoAdder from '@/components/TodoAdder'
 
 export default {
   components: {
@@ -17,11 +21,11 @@ export default {
     TodoAdder
   },
   computed: {
-    todos() {
-        return this.$store.getters.todos;
+    todos () {
+      return this.$store.getters.todos
     }
-  },
-};
+  }
+}
 </script>
 
 <style>
